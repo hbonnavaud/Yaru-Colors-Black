@@ -1,5 +1,6 @@
 from PIL import Image, ImageEnhance, ImageOps
 import os
+import pathlib
 
 # Define your custom color
 COLORIZE_HEX = "#646464"
@@ -9,7 +10,7 @@ hex_to_rgb = lambda h: tuple(int(h[i:i+2], 16) for i in (1, 3, 5))
 COLORIZE_RGB = hex_to_rgb(COLORIZE_HEX)
 
 # Base directory for icons
-ICON_DIR = "/home/hedwin/computing/Yaru-Colors/Icons/Yaru-Black"
+ICON_DIR = str(pathlib.Path(__file__).parent.absolute())
 
 # Process all PNG images recursively
 def process_images():
